@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        display: ['Playfair Display', 'serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +61,9 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        terracotta: "hsl(16, 60%, 45%)",
+        warmOrange: "hsl(24, 85%, 50%)",
+        cream: "hsl(35, 40%, 96%)",
       },
       borderRadius: {
         lg: "var(--radius)",
