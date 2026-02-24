@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
-import { LogOut, Download, Search, ChevronLeft, ChevronRight } from "lucide-react";
+import { LogOut, Download, Search, ChevronLeft, ChevronRight, Flower2, CalendarDays } from "lucide-react";
 
 interface Inscricao {
   id: string;
@@ -83,15 +83,31 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card px-6 py-4 flex items-center justify-between">
-        <h1 className="font-display text-xl font-bold text-foreground">Painel Admin</h1>
-        <div className="flex gap-3">
-          <button onClick={exportCSV} className="flex items-center gap-2 bg-primary text-primary-foreground font-body text-sm font-medium px-4 py-2 rounded-lg hover:bg-accent transition-colors">
-            <Download className="w-4 h-4" /> Exportar CSV
-          </button>
-          <button onClick={handleLogout} className="flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-sm transition-colors">
-            <LogOut className="w-4 h-4" /> Sair
-          </button>
+      {/* Branded Header */}
+      <header className="relative overflow-hidden border-b border-primary/20 bg-gradient-to-r from-primary/10 via-card to-primary/5 px-6 py-5">
+        {/* Decorative flower */}
+        <Flower2 className="absolute -right-4 -top-4 w-28 h-28 text-primary/10 rotate-12" />
+        <Flower2 className="absolute right-20 bottom-0 w-14 h-14 text-primary/8 -rotate-6" />
+
+        <div className="relative flex items-center justify-between">
+          <div>
+            <p className="font-body text-xs tracking-[0.2em] uppercase text-primary/70 mb-1">Mulheres Conectadas</p>
+            <h1 className="font-display text-2xl font-bold text-foreground">
+              Aprendendo a <span className="text-primary italic">Despertar</span>
+            </h1>
+            <div className="flex items-center gap-2 mt-1.5">
+              <CalendarDays className="w-3.5 h-3.5 text-muted-foreground" />
+              <span className="font-body text-xs text-muted-foreground">07 de Março — 16H · Miss. Kezia Souto</span>
+            </div>
+          </div>
+          <div className="flex gap-3">
+            <button onClick={exportCSV} className="flex items-center gap-2 bg-primary text-primary-foreground font-body text-sm font-medium px-4 py-2 rounded-lg hover:bg-accent transition-colors">
+              <Download className="w-4 h-4" /> Exportar CSV
+            </button>
+            <button onClick={handleLogout} className="flex items-center gap-2 text-muted-foreground hover:text-foreground font-body text-sm transition-colors">
+              <LogOut className="w-4 h-4" /> Sair
+            </button>
+          </div>
         </div>
       </header>
 
