@@ -1,0 +1,3 @@
+# Redirecionamento para SPA (Single Page Application)
+# Abrange as rotas: /, /inscricao, /confirmacao, /admin-login e /admin
+/* /index.html    200
